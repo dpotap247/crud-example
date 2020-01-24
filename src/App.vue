@@ -3,18 +3,16 @@
     <v-app-bar app color="dark" dark>
       <div  class="d-flex justify-space-between align-center col-12">
         <span class="mr-2">My Crud</span>
-        <div class="create">
-          <a href="/create" >
-            <v-icon x-large color="green">mdi-plus</v-icon>
-          </a>
-        </div>
+        <a href="/create" >
+          <v-icon x-large color="green">mdi-plus</v-icon>
+        </a>
       </div>
     </v-app-bar>
 
     <v-content>
       <router-view></router-view>
     </v-content>
-    
+
   </v-app>
 </template>
 
