@@ -15,6 +15,7 @@
     "vuetify": "^2.1.0"
   },
   "devDependencies": {
+    "@mdi/font": "^4.8.95",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
@@ -38,7 +39,8 @@
     ],
     "rules": {
       "no-console": "off",
-      "no-used-vars": "off"
+      "no-used-vars": "off",
+      "eslint-loader": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

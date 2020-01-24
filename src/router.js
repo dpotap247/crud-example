@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 
 const router = new VueRouter({
-  
+  mode: 'history',
   routes: [
   { path: '/', component: () => import ('./components/Index.vue')},
   { path: '/view/:id', component: () => import ('./components/View.vue')},

@@ -1,11 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+  <div class="view">
+     <v-simple-table >
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th class="text-left">Id</th>
+            <th class="text-left">Title</th>
+            <th class="text-left">Text</th>      
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.body }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
 </template>
 
@@ -14,6 +26,27 @@ export default {
   name: 'View',
   props: {
     msg: String
+  },
+  data(){
+    return{
+      item: undefined
+    }
+  },
+  mounted: function(){
+    this.loadItem();
+  },
+  methods:{
+    loadItem(){
+      this.$axios
+        .get(process.env.VUE_APP_API_URL + '/' + this.$route.params.id)
+        .then(response => {
+          this.item = response.data
+          console.log(response.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>
