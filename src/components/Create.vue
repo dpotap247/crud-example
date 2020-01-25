@@ -13,19 +13,18 @@ export default {
     'form-component': Form
   },
   methods:{
-      submit(title, text){
-        this.$axios
-          .post(process.env.VUE_APP_API_URL + '/', {
-            "title": title,
-            "body": text
-          })
-          .then(response => {
-            console.log('update'+ response)
-          })
-          .catch(err => {
-            console.log(err)
+    submit(title, text){
+      this.$axios
+        .post(process.env.VUE_APP_API_URL + '/', {
+          "title": title,
+          "body": text
         })
-
+        .then(response => {
+          console.log('update'+ response)
+        })
+        .catch(err => {
+          console.log(err)
+      })
     }
   }
 }
